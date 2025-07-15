@@ -2,200 +2,47 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <title>For Her Menu 💖</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>For Her ❤️</title>
   <style>
     body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
       background: linear-gradient(135deg, #ffdce0, #ffe8cc);
+      font-family: 'Segoe UI', sans-serif;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      overflow: hidden;
-      text-align: center;
-    }
-
-    .step {
-      display: none;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
     }
 
-    .step.active {
-      display: flex;
-    }
-
-    h1, p {
-      margin: 0.5em 0;
-    }
-
-    .buttons {
-      display: flex;
-      gap: 1.5em;
-      margin-top: 2em;
+    h1 {
+      margin-bottom: 2em;
     }
 
     button {
-      padding: 1em 2em;
-      font-size: 1em;
+      background-color: #ff8fa3;
       border: none;
       border-radius: 20px;
-      cursor: pointer;
-      background-color: #ff8fa3;
+      padding: 1em 2em;
+      margin: 1em;
+      font-size: 1em;
       color: white;
-      transition: all 0.3s ease;
+      cursor: pointer;
+      transition: background 0.3s ease;
     }
 
     button:hover {
       background-color: #e85d75;
     }
-
-    /* Modal */
-    .modal {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 10;
-    }
-
-    .modal-content {
-      position: relative;
-      background: white;
-      padding: 2em;
-      border-radius: 20px;
-      text-align: center;
-      max-width: 80%;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-      z-index: 11;
-    }
-
-    .modal-content h2 {
-      margin-bottom: 1em;
-    }
-
-    .modal-content button {
-      background-color: #ff8fa3;
-      color: white;
-      padding: 0.7em 1.5em;
-      border: none;
-      border-radius: 15px;
-      margin-top: 1em;
-      cursor: pointer;
-    }
-
-    .modal-content button:hover {
-      background-color: #e85d75;
-    }
-
-    .modal-hearts {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      pointer-events: none;
-      z-index: 9;
-      overflow: hidden;
-    }
-
-    .heart {
-      position: absolute;
-      font-size: 1.5em;
-      color: red;
-      animation: floatModalHearts 4s linear infinite;
-    }
-
-    @keyframes floatModalHearts {
-      0% { opacity: 1; transform: translateY(0) scale(1); }
-      100% { opacity: 0; transform: translateY(-150px) scale(1.5); }
-    }
   </style>
 </head>
 <body>
+  <h1>💖 Hello Swan </h1>
+  <a href="ask.html"><button>❤️ A Little Question </button></a>
+  <a href="for.html"><button>🎁 A Little Something </button></a>
+  <a href="why_not.html"><button> 🎶 A Little Song </button></a>
 
-  <!-- Step 1 -->
-  <div class="step active" id="step1">
-    <h1>To my beautiful girl ❤️</h1>
-    <p>I made this just for you...</p>
-    <button onclick="nextStep(2)">Next</button>
-  </div>
-
-  <!-- Step 2 -->
-  <div class="step" id="step2">
-    <h1>You’re amazing 💫</h1>
-    <p>I feel so lucky to be a part of your life.</p>
-    <button onclick="nextStep(3)">Next</button>
-  </div>
-
-  <!-- Step 3 -->
-  <div class="step" id="step3">
-    <h1>So I have to ask...</h1>
-    <h2>Will you be my "unofficial" girlfriend?</h2>
-    <div class="buttons">
-      <button id="yesBtn" onclick="sayYes()">Yes 💖</button>
-      <button onclick="sayNo()">No 😢</button>
-    </div>
-  </div>
-
-  <!-- Yes Modal -->
-  <div class="modal" id="yesModal">
-    <div class="modal-hearts" id="modalHearts"></div>
-    <div class="modal-content">
-      <h2>Yay! You know I'm joking about the unofficial part 💕</h2>
-      <p>You just made my whole day. I’m so excited for us 💖</p>
-      <button onclick="closeModal('yesModal')">Aww 🥰</button>
-    </div>
-  </div>
-
-  <!-- Music -->
-  <audio autoplay loop>
-    <source src="https://github.com/mixsound/mp3/raw/main/Bobby%20V%20-%20Slow%20Down.mp3" type="audio/mpeg" />
-    Your browser does not support the audio element.
-  </audio>
-
-  <script>
-    function nextStep(stepNumber) {
-      document.querySelectorAll('.step').forEach(step => step.classList.remove('active'));
-      document.getElementById(`step${stepNumber}`).classList.add('active');
-    }
-
-    let yesBtnScale = 1;
-
-    function sayYes() {
-      showModal('yesModal');
-      const hearts = document.getElementById("modalHearts");
-      hearts.innerHTML = "";
-      for (let i = 0; i < 40; i++) {
-        const heart = document.createElement("div");
-        heart.className = "heart";
-        heart.style.left = Math.random() * 100 + "%";
-        heart.style.top = 50 + Math.random() * 40 + "%";
-        heart.style.animationDelay = Math.random() * 4 + "s";
-        heart.innerText = "❤️";
-        hearts.appendChild(heart);
-      }
-    }
-
-    function sayNo() {
-      const btn = document.getElementById("yesBtn");
-      if (yesBtnScale < 50) {
-        yesBtnScale += 0.4;
-        btn.style.transform = `scale(${yesBtnScale})`;
-      }
-    }
-
-    function showModal(id) {
-      document.getElementById(id).style.display = 'flex';
-    }
-
-    function closeModal(id) {
-      document.getElementById(id).style.display = 'none';
-    }
-  </script>
 </body>
 </html>
