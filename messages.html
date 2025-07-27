@@ -1,0 +1,157 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>For Her 🎁</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      background: linear-gradient(135deg, #ffdce0, #ffe8cc);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 1em;
+    }
+
+    p {
+      font-size: 1.2em;
+      max-width: 80%;
+    }
+
+    button {
+      background-color: #ff8fa3;
+      border: none;
+      border-radius: 20px;
+      padding: 1em 2em;
+      font-size: 1em;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #e85d75;
+    }
+  </style>
+</head>
+<body>
+  <a style="position: fixed; top: 10px;left: 10px;" href="index.html">
+    <button>⬅️ Back</button>
+  </a>
+  <h1>You’re Amazing 💫</h1>
+  <p></p>
+    
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>For Her 💖</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff0f5;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2em;
+      text-align: center;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 2em;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+    }
+
+    .pagination {
+      margin-top: 1.5em;
+    }
+
+    .pagination button {
+      margin: 0 0.5em;
+      padding: 0.5em 1.2em;
+      border: none;
+      background: #ff8fa3;
+      color: white;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .pagination button:hover {
+      background: #e85d75;
+    }
+
+    .back {
+      text-decoration: none;
+      color: #555;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="card" id="messageCard">
+    💖💖💖💖💖💖💖💖💖💖💖💖💖
+    <p id="messageText">Loading...</p>
+  </div>
+
+  <div class="pagination">
+    <button onclick="prevMessage()">Previous</button>
+    <button onclick="nextMessage()">Next</button>
+  </div>
+
+  <a class="back" style="position: fixed;
+    top: 10px;
+    left: 10px;" href="index.html">← Back to Menu</a>
+
+  <script>
+    const messages = [
+      "I just want you to know how proud I am of you. Everything you've overcome, the way you keep going even when it's tough. You deserve all the love in the world.",
+      "Everyone has someone special in their life, for it's you.",
+      "You being you will always be enough for me."
+    ];
+
+    let current = 0;
+    const messageText = document.getElementById("messageText");
+
+    function showMessage(index) {
+      messageText.textContent = messages[index];
+    }
+
+    function nextMessage() {
+      if (current < messages.length - 1) {
+        current++;
+        showMessage(current);
+      }
+    }
+
+    function prevMessage() {
+      if (current > 0) {
+        current--;
+        showMessage(current);
+      }
+    }
+
+    // Initial load
+    showMessage(current);
+  </script>
+
+</body>
+</html>

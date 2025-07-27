@@ -8,7 +8,7 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #ffdce0, #ffe8cc);
+      background: #fff0f5;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -39,18 +39,17 @@
     }
 
     button {
-      padding: 1em 2em;
-      font-size: 1em;
+      margin: 0 0.5em;
+      padding: 0.5em 1.2em;
       border: none;
-      border-radius: 20px;
-      cursor: pointer;
-      background-color: #ff8fa3;
+      background: #ff8fa3;
       color: white;
-      transition: all 0.3s ease;
+      border-radius: 10px;
+      cursor: pointer;
     }
 
     button:hover {
-      background-color: #e85d75;
+      background: #e85d75;
     }
 
     /* Modal */
@@ -94,6 +93,12 @@
       background-color: #e85d75;
     }
 
+    .back {
+      text-decoration: none;
+      color: #555;
+      font-weight: bold;
+    }
+
     .modal-hearts {
       position: absolute;
       top: 0; left: 0;
@@ -119,7 +124,7 @@
 <body>
 
   <div class="step active" id="step1">
-    <h1>To my Swan ❤️</h1>
+    <h1>To P3❤️</h1>
     <p>I made this just for you...</p>
     <button onclick="nextStep(2)">Next</button>
   </div>
@@ -153,9 +158,10 @@
     Your browser does not support the audio element.
     </audio>
 
-  <a style="position: fixed;
+
+    <a class="back" style="position: fixed;
     top: 10px;
-    left: 10px;" href="index.html"><button>⬅️ Back</button></a>
+    left: 10px;" href="index.html">← Back to Menu</a>
 
    <script>
     

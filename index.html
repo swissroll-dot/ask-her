@@ -1,50 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>For Her Menu 💖</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style>
-    body {
-      background: linear-gradient(135deg, #ffdce0, #ffe8cc);
-      font-family: 'Segoe UI', sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-      text-align: center;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <title>Welcome 💖</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #fff0f5;
+        font-family: 'Segoe UI', sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        text-align: center;
+      }
 
-    h1 {
-      margin-bottom: 2em;
-    }
+      .menu-container {
+        background: white;
+        padding: 2em;
+        border-radius: 20px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        width: 90%;
+        max-width: 400px;
+      }
 
-    button {
-      background-color: #ff8fa3;
-      border: none;
-      border-radius: 20px;
-      padding: 1em 2em;
-      margin: 1em;
-      font-size: 1em;
-      color: white;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
+      h1 {
+        color: #ff8fa3;
+        margin-bottom: 1em;
+      }
 
-    button:hover {
-      background-color: #e85d75;
-    }
-  </style>
-</head>
-<body>
-  <h1>💖 Hello Swan </h1>
-  <a href="ask.html"><button>❤️ A Little Question </button></a>
-  <a href="for.html"><button>🎁 A Little Something </button></a>
-  <a href="why_not.html"><button> 🎶 A Little Song </button></a>
+      .menu-btn {
+        display: block;
+        padding: 1em;
+        margin: 0.5em 0;
+        background-color: #ff8fa3;
+        color: white;
+        border: none;
+        border-radius: 12px;
+        font-size: 1.1em;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        text-decoration: none;
+      }
 
+      .menu-btn:hover {
+        background-color: #e85d75;
+      }
+    </style>
+  </head>
+  <body>
 
+    <div class="menu-container">
+      <h1> Hello Motshidisi 🫂</h1>
+      <a href="ask.html" class="menu-btn">
+        ❤️ A Little Question
+      </a>
+      <a href="messages.html" class="menu-btn">
+        🎁 A Little Something 
+      </a>
+      <a href="song.html" class="menu-btn">
+        🎶 A Little Song 
+      </a>
+    </div>
 
-</body>
+  </body>
 </html>
